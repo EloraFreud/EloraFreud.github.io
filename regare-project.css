@@ -1,0 +1,588 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Erica+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+
+html {
+    box-sizing: border-box;
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+
+  body{
+    background-color: #fff;
+    transition: all .5s ease;
+  }
+
+  :root {
+    /** sunny side **/
+    --primary-gray: #F7F7F9;
+    --secondary-gray: #DEDEE0;
+    --tertiary-gray: #9A9999;
+    --white: #fff;
+    --black: #0A0C11;
+    --black2: #212121;
+    --shadow: rgba(0, 0, 0, 0.241);
+    --blue-color: #93B6D7;
+    --yellow-background: #fffaa8;
+    --orange: #F7CEAD;
+    --green-color: #87D0B8;
+    --gray-border: #e8e8ea;
+    --gray-dots: #e8e8ea;
+
+    --black-f1: #111217;
+    --black2-f1: #28282F;
+    --red-f1: #FF1E00;
+    --purple-f1: #9747FF;
+
+    --black-regare: #0B131F;
+  }
+
+  .header{
+    margin: 2rem;
+  }
+
+.title-header{
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 1.3rem;
+    color: var(--black);
+  }
+
+  .portfolio{
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 300;
+  }
+
+  .footer{
+    font-family: 'Open Sans', sans-serif;
+    font-size: .8rem;
+    color: var(--tertiary-gray);
+    display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+    position: relative;
+    margin: 2rem;
+  }
+
+  .svg-footer{
+    scale: .7;
+  }
+
+  .svg-footer svg{
+    margin: .6rem;
+  }
+
+  .lien-footer{
+    color: var(--tertiary-gray);
+  }
+
+  .close-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: auto;
+    border: none;
+    padding: .5rem;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0px 4px 40px rgba(158, 158, 158, 0.25);
+}
+
+.svg-close-button{
+    transform: rotate(45deg);
+}
+
+.main{
+    margin: 2rem;
+}
+
+.text-container{
+    margin: auto;
+    max-width: 60rem;
+}
+
+.description-container{
+    margin: auto;
+    max-width: 50rem;
+}
+
+.title-project{
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.title-description{
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    margin-top: 4rem;
+}
+
+.subtitle-project{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--tertiary-gray);
+}
+
+/* fonctionne pas */
+.divider{
+    border: .1rem solid var(--secondary-gray);
+    margin: 1rem 0;
+}
+
+.text-primary{
+    text-transform: uppercase;
+    font-family: 'Inter Tight', sans-serif;
+    color: var(--tertiary-gray);
+    letter-spacing : .06rem;
+    font-size: .8rem;
+    margin-block: 0;
+    margin: 1rem 0;
+}
+
+.text-secondary{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 2rem;
+    margin-block: 0;
+}
+
+.column{
+    transition: all .5s ease;
+    margin-bottom: 2rem;
+}
+
+.first-column{
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.paragraph{
+    margin-block: 0;
+    margin-bottom: .8rem;
+}
+
+.last{
+    margin-bottom: 2rem;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    width: 21rem;
+    height: 280rem;
+    margin: auto;
+    padding-top: 2rem;
+    gap: 2rem;
+    transition: all .5s ease;
+}
+
+.logo-container{
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: var(--black-regare);
+    border-radius: 2rem;
+}
+
+.first-container{
+    grid-column: 1 / 2;
+    grid-row: 5 / 7;
+    overflow: hidden;
+    position: relative;
+}
+
+.second-container{
+    grid-column: 1 / 2;
+    grid-row: 7 / 9;
+    overflow: hidden;
+    position: relative;
+}
+
+.third-container{
+    grid-column: 1 / 2;
+    grid-row: 9 / 11;
+    overflow: hidden;
+    position: relative;
+}
+
+.fourth-container{
+    grid-column: 1 / 2;
+    grid-row: 11 / 13;
+    overflow: hidden;
+    position: relative;
+}
+
+.img-app{
+    display: flex;
+    position: absolute;
+    width: 21rem;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    border: .1rem solid var(--secondary-gray);
+}
+
+.img-logo{
+    display: flex;
+    position: absolute;
+    width: 14rem;
+}
+
+.card{
+    background-color: var(--primary-gray);
+    border-radius: 2rem;
+}
+
+.pattern-container{
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-gray);
+}
+
+.img-start-pattern{
+    display: flex;
+    position: absolute;
+    width: 70rem;
+    transform: rotate(-30deg);
+}
+
+.mockup-container{
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mockup-regare{
+    display: flex;
+    position: absolute;
+    width: 25rem;
+    bottom: -4rem;
+}
+
+.website-container{
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+    overflow: hidden;
+    position: relative;
+}
+
+.img-iphone-music{
+    z-index: 2;
+    display: flex;
+    position: absolute;
+    width: 10rem;
+    top: 8rem;
+    right: 2rem;
+}
+
+.img-iphone-profil{
+    z-index: 1;
+    display: flex;
+    position: absolute;
+    width: 10rem;
+    top: -2rem;
+    left: 2rem;
+}
+
+.website-container:hover .img-iphone-music{
+    top: 4rem;
+    transition: all 1s ease-out;
+}
+
+.website-container:not(:hover) .img-iphone-music{
+    top: 8rem;
+    transition: all 1s ease-out;
+}
+
+.website-container:hover .img-iphone-profil{
+    top: -2rem;
+    transition: all 1s ease-out;
+}
+
+.website-container:not(:hover) .img-iphone-profil{
+    top: -8rem;
+    transition: all 1s ease-out;
+}
+
+.equipe{
+    display: none;
+}
+
+.prototype{
+    display: initial;
+}
+
+.printer-container{
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prototype-button{
+    font-family: 'Open sans', sans-serif;
+    font-size: medium;
+    background-color: var(--white);
+    border-radius: 2rem;
+    color: var(--black);
+    border: 2px solid var(--secondary-gray);
+    height: 3.5rem;
+    padding: .8rem 1.5rem;
+    text-decoration : none;
+    transition: all 250ms ease-in;
+  }
+
+  .prototype-button:active {
+    transform: scale(.9);
+    transition: all 100ms ease;
+  }
+  
+  .prototype-button:hover {
+    box-shadow: 0px 0px 0px 3px var(--secondary-gray);
+  }
+
+  .video-container{
+    display: flex;
+    position: relative;
+    margin: auto;
+    width: 100%;
+    margin-block-start: 2rem;
+    border-radius: 2rem;
+  }
+
+  .top{
+    margin-top: 2rem;
+  }
+
+@media (min-width: 560px){
+    .br{
+        display: none;
+    }
+}
+
+@media (min-width: 750px){
+
+    .grid{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(8, 1fr);
+        width: 42rem;
+        height: 180rem;
+    }
+
+    .img-app{
+        width: 20.5rem;
+    }
+
+    .first-container{
+        grid-column: 1 / 2;
+        grid-row: 5 / 7;
+    }
+    
+    .second-container{
+        grid-column: 2 / 3;
+        grid-row: 5 / 7;
+    }
+    
+    .third-container{
+        grid-column: 1 / 2;
+        grid-row: 7 / 9;
+    }
+    
+    .fourth-container{
+        grid-column: 2 / 3;
+        grid-row: 7 / 9;
+    }
+
+    .equipe{
+        display: initial;
+    }
+    
+    .pattern-container{
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+    
+    .mockup-container{
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+    }
+    
+    .website-container{
+        grid-column: 1 / 3;
+        grid-row: 3 / 5;
+    }
+
+    .prototype{
+        display: initial;
+    }
+    
+    .img-iphone-music{
+        width: 20rem;
+        right: 2rem;
+    }
+    
+    .img-iphone-profil{
+        width: 20rem;
+        top: -2rem;
+        left: 2rem;
+    }
+    
+    .website-container:not(:hover) .img-iphone-music{
+        top: 20rem;
+        transition: all 1s ease-out;
+    }
+
+    .website-container:hover .img-iphone-profil{
+        top: -6rem;
+    }
+    
+    .website-container:not(:hover) .img-iphone-profil{
+        top: -15rem;
+    }
+
+    .mockup-regare{
+        width: 25rem;
+        bottom: -6rem;
+    }
+  }
+
+  @media (min-width: 990px){
+
+    .grid{
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        width: 100%;
+        height: 60rem;
+        max-width: 60rem;
+    }
+
+    .img-app{
+        width: 13.3rem;
+    }
+
+    .first-container{
+        grid-column: 1 / 2;
+        grid-row: 3 / 5;
+    }
+    
+    .second-container{
+        grid-column: 2 / 3;
+        grid-row: 3 / 5;
+    }
+    
+    .third-container{
+        grid-column: 3 / 4;
+        grid-row: 3 / 5;
+    }
+    
+    .fourth-container{
+        grid-column: 4 / 5;
+        grid-row: 3 / 5;
+    }
+
+    .column{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        gap: 2rem;
+    }
+
+    .first-column{
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        display: block;
+    }
+
+    .second-column{
+        grid-column: 2 / 5;
+        grid-row: 1 / 2;
+    }
+    
+    .pattern-container{
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+    
+    .mockup-container{
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+    }
+    
+    .website-container{
+        grid-column: 3 / 5;
+        grid-row: 1 / 3;
+    }
+    
+    .prototype{
+        display: initial;
+    }
+
+    .img-start-pattern{
+        width: 60rem;
+    }
+
+    .img-iphone-music{
+        width: 16rem;
+    }
+    
+    .img-iphone-profil{
+        width: 16rem;
+    }
+    
+    .website-container:hover .img-iphone-music{
+        top: 5rem;
+        transition: all 1s ease-out;
+    }
+    
+    .website-container:not(:hover) .img-iphone-music{
+        top: 14rem;
+        transition: all 1s ease-out;
+    }
+    
+    .website-container:hover .img-iphone-profil{
+        top: -6rem;
+    }
+    
+    .website-container:not(:hover) .img-iphone-profil{
+        top: -15rem;
+    }
+
+    .img-logo{
+        width: 10rem;
+    }
+
+    .mockup-regare{
+        width: 22rem;
+        bottom: -8rem;
+    }
+  }

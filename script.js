@@ -14,28 +14,20 @@ function changeImage(){
 	}
 }
 
-(function () {
-    var slider = $('.wrapper'),
-        sliderElements = slider.find('.picture-slideshow'),
-        sliderElementLastIndex = sliderElements.length - 1,
-        timer,
-        actualIndex = 0,
-        step = function () {
-            clearTimeout(timer);
-            timer = setTimeout(function () {
-                if (actualIndex < sliderElementLastIndex) {
-                    actualIndex++;
-                } else {
-                    actualIndex = 0;
-                }
-                sliderElements.removeClass('active');
-                sliderElements.eq(actualIndex).addClass('active');
-                step();
-            }, 10000);
-        };
-    clearTimeout(timer);
-    step();
-}());
+const slider = document.querySelector(".wrapper");
+const sliderElements = slider.querySelectorAll(".picture-slideshow");
+const slideCount = sliderElements.length - 1;
+let currentIndex = 0;
+
+setInterval(() => {
+  if (currentIndex < slideCount) {
+      currentIndex++;
+  } else {
+      currentIndex = 0;
+  }
+  sliderElements.forEach(s => s.classList.remove('active'));
+  sliderElements.item(currentIndex).classList.add('active');
+}, 10000)
 
 // const el = document.querySelector(".card");
 // const wrap = document.querySelector(".card__wrapper");

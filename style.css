@@ -832,6 +832,10 @@ html {
     color: var(--tertiary-gray);
   }
 
+  canvas {
+    display: block;
+  }
+
   /* ----- animations ------ */
   @-webkit-keyframes rotate-30-card {
     0% {
@@ -1090,7 +1094,7 @@ html {
   }
   
   .card-front {
-    background: var(--white);
+    background: url(images/mystery-background.png);
   }
   
   .card-back {

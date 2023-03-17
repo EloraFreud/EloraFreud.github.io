@@ -177,8 +177,9 @@ html {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(4, 1fr);
-    width: 22rem;
-    height: 100rem;
+    width: auto;
+    max-width: 22rem;
+    height: 90rem;
     margin: auto;
     padding-top: 2rem;
     gap: 2rem;
@@ -251,6 +252,10 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url(images/f1-project/mockup_app_f1.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .mockup-f1-start{

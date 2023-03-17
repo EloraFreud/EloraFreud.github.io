@@ -172,8 +172,9 @@ html {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(4, 1fr);
-    width: 22rem;
-    height: 100rem;
+    width: auto;
+    max-width: 21rem;
+    height: 90rem;
     margin: auto;
     padding-top: 2rem;
     gap: 2rem;
@@ -244,6 +245,10 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url(images/prinskin-project/pattern.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .img-pattern{
@@ -256,6 +261,7 @@ html {
     display: flex;
     position: absolute;
     width: 30rem;
+    background-size: cover;
 }
 
 .mascotte-container{
@@ -366,8 +372,9 @@ html {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(1, 1fr);
-    width: 22rem;
-    height: 22rem;
+    width: auto;
+    max-width: 21rem;
+    height: 21rem;
     margin: auto;
     margin-top: 2rem;
     transition: all .5s ease;
@@ -444,8 +451,8 @@ html {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    width: 22rem;
-    height: 45rem;
+    width: auto;
+    height: 44rem;
     margin: auto;
     margin-top: 2rem;
     gap: 2rem;
@@ -470,7 +477,7 @@ html {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(1, 1fr);
-    width: 22rem;
+    width: auto;
     height: 10rem;
     margin: auto;
     gap: 2rem;
@@ -564,8 +571,8 @@ html {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    width: 22rem;
-    height: 70rem;
+    width: auto;
+    height: 68rem;
     margin: auto;
     margin-top: 2rem;
     gap: 2rem;
@@ -868,6 +875,13 @@ html {
     
     .img-stickers{
         width: 12rem;
+    }
+
+    .grid-double-color{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        width: 28rem;
+        height: 12rem;
     }
   }
 

@@ -1,17 +1,17 @@
-function changeImage(){
-  var img=document.getElementById("avatar");
+function changeImage() {
+  var img = document.getElementById("avatar");
   var bouton = document.getElementById("avatar-button");
 
-  if(img.getAttribute('src')=="images/avatar.png"){
-    img.src="images/avatar-distanciel.png";
-  }else {
-    img.src="images/avatar.png";
+  if (img.getAttribute("src") == "images/avatar.png") {
+    img.src = "images/avatar-distanciel.png";
+  } else {
+    img.src = "images/avatar.png";
   }
-	if (bouton.textContent === "Présentiel") {
-		bouton.textContent = "Distanciel";
-	} else {
-		bouton.textContent = "Présentiel";
-	}
+  if (bouton.textContent === "Présentiel") {
+    bouton.textContent = "Distanciel";
+  } else {
+    bouton.textContent = "Présentiel";
+  }
 }
 
 const slider = document.querySelector(".wrapper");
@@ -21,13 +21,13 @@ let currentIndex = 0;
 
 setInterval(() => {
   if (currentIndex < slideCount) {
-      currentIndex++;
+    currentIndex++;
   } else {
-      currentIndex = 0;
+    currentIndex = 0;
   }
-  sliderElements.forEach(s => s.classList.remove('active'));
-  sliderElements.item(currentIndex).classList.add('active');
-}, 10000)
+  sliderElements.forEach((s) => s.classList.remove("active"));
+  sliderElements.item(currentIndex).classList.add("active");
+}, 10000);
 
 // const el = document.querySelector(".card");
 // const wrap = document.querySelector(".card__wrapper");
@@ -55,49 +55,71 @@ setInterval(() => {
 //   document.documentElement.style.setProperty("--r-y", rY + "deg");
 // });
 
-is_flipped = false;
-var cards = document.querySelectorAll('.card-flip');
+const mangas = [
+  {
+    src: "images/manga/berserk.png",
+    alt: "Manga-Berserk",
+  },
+  {
+    src: "images/manga/death-note.jpeg",
+    alt: "Manga-Death-Note",
+  },
+  {
+    src: "images/manga/berserk2.jpeg",
+    alt: "Manga-Berserk",
+  },
+  {
+    src: "images/manga/naruto.jpeg",
+    alt: "Manga-Naruto",
+  },
+  {
+    src: "images/manga/one-piece.jpg",
+    alt: "Manga-One-piece",
+  },
+  {
+    src: "images/manga/snk.jpeg",
+    alt: "Manga-Attaque des titans",
+  },
+  {
+    src: "images/manga/vinland-saga.jpeg",
+    alt: "Manga-Vinland saga",
+  },
+];
 
-[...cards].forEach((card)=>{
-  card.addEventListener( 'click', function() {
-    card.classList.toggle('is-flipped');
-    generateMangaRandom()
-  });
+let flippableCard = document.querySelector(".card-flip");
+let cardImg = flippableCard.querySelector(".card-back > img");
+
+flippableCard.addEventListener("click", () => {
+  flippableCard.classList.toggle("is-flipped");
+
+  if (flippableCard.classList.contains("is-flipped")) {
+    // interestingly, cardImg.getAttribute("src") and cardImg.src are not the same
+    // cardImg.src is the "completed by the browser" path like http://<domain>:<port>/images/manga/<something>
+    const randomManga = getRandomManga(cardImg.getAttribute("src"));
+    cardImg.src = randomManga.src;
+    cardImg.alt = randomManga.alt;
+  }
 });
 
-let manga_src = ['images/manga/berserk.png', 'images/manga/death-note.jpeg', 'images/manga/berserk2.jpeg', 'images/manga/naruto.jpeg', 'images/manga/one-piece.jpg', 'images/manga/snk.jpeg', 'images/manga/vinland-saga.jpeg'];
-let manga_alt = ['Manga-Berserk', 'Manga-Death-Note', 'Manga-Berserk', 'Manga-Naruto', 'Manga-One-piece', 'Manga-Attaque des titans', 'Manga-Vinland saga'];
+function getRandomManga(currentSrc) {
+  let newManga = mangas[getRandomInt(mangas.length)];
+
+  while (currentSrc == newManga.src) {
+    newManga = mangas[getRandomInt(mangas.length)];
+  }
+
+  return newManga;
+}
 
 function getRandomInt(max) {
-    return Math.floor(Math.random() * manga_src.length);
-}
-
-function generateMangaRandom(){
-    is_flipped = !is_flipped;
-    const elt = document.querySelector(".card-back");
-    if(is_flipped){
-        manga_random = getRandomInt(3)
-        elt.innerHTML = '<img src={0} alt={1} class="img-back">'.format(manga_src[manga_random], manga_alt[manga_random])
-    }
-    else{
-        elt.innerHTML = ""
-    }
-}
-
-String.prototype.format = function() {
-    a = this;
-    for (k in arguments) {
-        a = a.replace("{" + k + "}", arguments[k])
-    }
-    return a
+  return Math.floor(Math.random() * max);
 }
 
 var b = document.querySelector("body");
 var btn = document.getElementById("toggle");
-btn.addEventListener("click", function(){
+btn.addEventListener("click", function () {
   b.classList.toggle("alternate");
 });
-
 
 // box shadow container when button-project moouseover
 // var boutonOrni = document.getElementById("button-project-ornitologie");
@@ -112,7 +134,6 @@ btn.addEventListener("click", function(){
 //   ornitologie.classList.remove("show");
 // });
 
-
 //ajouter l'overlay sauf sur le container de l'ornitologie, besoin de rien dans l'html
 // $(function(){
 //   $("body").not('#ornitologie-project-container').addClass("overlay");
@@ -124,38 +145,36 @@ btn.addEventListener("click", function(){
 // });
 
 // sélectionner tous les boutons dans la grille
-const buttons = document.querySelectorAll('.button-projet');
-const cardTitles = document.querySelectorAll('.card-title');
+const buttons = document.querySelectorAll(".button-projet");
+const cardTitles = document.querySelectorAll(".card-title");
 
-const articles = document.querySelectorAll('article');
-articles.forEach(a => {
+const articles = document.querySelectorAll("article");
+articles.forEach((a) => {
   const button = a.querySelector(".button-projet");
   const title = a.querySelector(".card-title");
-  if(button){
-    button.addEventListener('mouseover', () => {
-      articles.forEach(art => {
-        if(art != a){
+  if (button) {
+    button.addEventListener("mouseover", () => {
+      articles.forEach((art) => {
+        if (art != a) {
           art.style.opacity = "0.2";
-        }else{
+        } else {
           art.style.opacity = "1";
           title.style.opacity = "1";
         }
-      })
-    });  
+      });
+    });
 
     button.addEventListener("mouseout", () => {
-      articles.forEach(art => {
-          art.style.opacity = "1";
-          title.style.opacity = "0";
-      })
+      articles.forEach((art) => {
+        art.style.opacity = "1";
+        title.style.opacity = "0";
+      });
     });
   }
 });
 
 // gestionnaire d'événement pour chaque bouton
-buttons.forEach(button => {
-  
-});
+buttons.forEach((button) => {});
 
 /*
 

@@ -1027,26 +1027,26 @@ html {
     .img-start-pattern{
         width: 20rem;
     }
-
-    /* .img-mascotte-print{
+/* 
+    .img-mascotte-print{
         width: 13rem;
         bottom: 2rem;
         left: 2rem;
-    }
+    } */
     
     .img-mascotte-skin{
         display: none;
     }
     
-    .img-mascotte-skin2{
+    /* .img-mascotte-skin2{
         display: none;
-    }
+    } */
     
     .img-mascotte-print2{
         display: none;
     }
     
-    .img-mascotte-hand-start{
+    /* .img-mascotte-hand-start{
         display: flex;
         position: absolute;
         width: 12rem;
